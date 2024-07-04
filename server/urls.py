@@ -8,5 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home),
     path('results/',recommendation),
-    path('map/',map)
+    path('json/',json_data),
+    path('hotspot/',hotspot),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

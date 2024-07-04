@@ -9,24 +9,24 @@
 </div>
 <!-- end of hero element -->
  <!-- recommended places -->
-<div class="section service-section-1">
+<div class="service-section-1">
     <div class="container">
         <div class="row mb-5">
             <div class="col-lg-6 mx-auto text-center">
                 <div class="heading-content" data-aos="fade-up">
-                    <h2 class="heading">Places Near To: {{data.cur_loc}}</h2> 
+                    <h2 class="heading">Places Near To: {{cur_loc}}</h2> 
                     <p>To go to the Ev charging Point Click on Directions Icon</p>
                 </div>
             </div>
         </div>
-{% for data in data %}
+{% for i in data %}
         <div class="row">
             <div class="col-lg-12">
                 <div class="bg-white p-4 rounded job-position">
                     <div class="row">
                         <div class="col-lg-7">
                             <span class="block subtitle">{{data.distance}}</span>
-                            <h2>{{data.name}}</h2>
+                            <h2>{{i}}</h2>
                             <div class="d-flex align-items-center">
                                 <div class="d-flex align-items-center me-4">
                                     <span class="icon-room me-2"></span> <span>Availability</span>
@@ -37,14 +37,14 @@
                             </div>
                         </div>
                         <div class="col-lg-5 text-lg-end">
-                            <a href="#" class="d-inline-flex align-items-center"><span class="me-2">View Position</span> <span class="icon-link2"></span></a>
+                            <a href="#" class="d-inline-flex align-items-center"><span class="me-2">Get Direction</span> <span class="icon-link2"></span></a>
                         </div>
 
                     </div> 	
 
                 </div>
             </div>
-
+            <div id="latLonData" data-lat-lon="{{lat_lon}}"></div>
         </div>
 {% endfor %}
     </div>
@@ -55,13 +55,28 @@
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-    
     let marker = L.marker([51.5, -0.09]).addTo(map);
-    L.Routing.control({
+    function json_data() {
+        let url='/json/'
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+        var currentLat = data.cur_lat;
+        var currentLon = data.cur_lon;
+        var destinationLat = data.des_lat;
+        var destinationLon = data.des_lon;
+        L.Routing.control({
       waypoints: [
-        L.latLng(28.55, 77.56),
-        L.latLng(27.6792, 76.43)
+        L.latLng(currentLat, currentLon),
+        L.latLng(destinationLat, destinationLon)
       ]
     }).addTo(map);
+            
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+    json_data();
+    
         </script>
 {%endblock%}
