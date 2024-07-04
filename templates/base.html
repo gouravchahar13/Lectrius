@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+{%load static%}
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="bootstrap, bootstrap5" />
+	<!-- fonts  -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{%static 'css/tiny-slider.css'%}">
+	<link rel="stylesheet" href="{%static 'css/aos.css'%}">
+	<link rel="stylesheet" href="{%static 'css/flatpickr.min.css'%}">
+	<link rel="stylesheet" href="{%static 'css/glightbox.min.css'%}">
+	<link rel="stylesheet" href="{%static 'css/style.css'%}">
+	<title>Lectrius</title>
+</head>
+<body>
+	<!-- nav bar starts here -->
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
+	
+	<nav class="site-nav mt-3">
+		<div class="container">
+			<div class="site-navigation">
+				<div class="row">
+					<div class="col-6 col-lg-3">
+						<a href="/" class="logo m-0 float-start">Lectrius</a>
+					</div>
+					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
+						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="/get_path/">Get Path</a></li>
+						</ul>
+					</div>
+					<div class="col-6 col-lg-3 text-lg-end">
+						<ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
+							<li class="cta-button"><a href="/get_path/">Explore</a></li>
+						</ul>
+	
+						<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+							<span></span>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+        {% block content %}
+        {% endblock %}
+
+		<script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+		<script src="{%static 'js/tiny-slider.js'%}"></script>
+		<script src="{%static 'js/aos.js'%}"></script>
+		<script src="{%static 'js/navbar.js'%}"></script>
+		<script src="{%static 'js/counter.js'%}"></script>
+		<script src="{%static 'js/rellax.js'%}"></script>
+		<script src="{%static 'js/flatpickr.js'%}"></script>
+		<script src="{%static 'js/glightbox.min.js'%}"></script>
+		<script src="{%static 'js/custom.js'%}"></script>
+	</body>
+	</html>
