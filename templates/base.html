@@ -16,6 +16,10 @@
 	<link rel="stylesheet" href="{%static 'css/glightbox.min.css'%}">
 	<link rel="stylesheet" href="{%static 'css/style.css'%}">
 	<title>Lectrius</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 </head>
 <body>
 	<!-- nav bar starts here -->
@@ -58,14 +62,35 @@
         {% block content %}
         {% endblock %}
 
-		<script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
-		<script src="{%static 'js/tiny-slider.js'%}"></script>
-		<script src="{%static 'js/aos.js'%}"></script>
-		<script src="{%static 'js/navbar.js'%}"></script>
-		<script src="{%static 'js/counter.js'%}"></script>
-		<script src="{%static 'js/rellax.js'%}"></script>
-		<script src="{%static 'js/flatpickr.js'%}"></script>
-		<script src="{%static 'js/glightbox.min.js'%}"></script>
-		<script src="{%static 'js/custom.js'%}"></script>
+<!-- footer starts -->
+<div class="site-footer">
+    <div class="container d-flex align-items-center">
+        <div class="col-lg-6 justify-content-center">
+            <div class="text-xxl">
+                Copyright &copy; @ 2024 : Lectrius
+            </div>
+        </div>
+    <!-- footer ends -->
+
+    <!-- Preloader -->
+    <div id="overlayer"></div>
+    <div class="loader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- script tags -->
+<script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+<script src="{%static 'js/tiny-slider.js'%}"></script>
+<script src="{%static 'js/aos.js'%}"></script>
+<script src="{%static 'js/navbar.js'%}"></script>
+<script src="{%static 'js/counter.js'%}"></script>
+<script src="{%static 'js/rellax.js'%}"></script>
+<script src="{%static 'js/flatpickr.js'%}"></script>
+<script src="{%static 'js/glightbox.min.js'%}"></script>
+<script src="{%static 'js/custom.js'%}"></script>
 	</body>
 	</html>
