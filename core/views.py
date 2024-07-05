@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from model import model
 from django.http import JsonResponse
+from foli import map
 
 # Create your views here.
 def home(request):       
@@ -17,7 +18,9 @@ def recommendation(request):
     return render(request,'recommendation.html',context)
 
 def hotspot(request):
-    return render(request,'hotspot.html')
+    map_html = map()
+    context = {"map_html": map_html}
+    return render(request,'hotspot.html',context)
 
 def json_data(request):
     data=model()

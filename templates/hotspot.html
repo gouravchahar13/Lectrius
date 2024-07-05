@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="hero overlay">
+  <div class="">
+  <iframe srcdoc="{{ map_html }}" style="width: 100%; height:100vh">
+  </iframe>
+  </div>
+  </div>
+{%endblock%}
