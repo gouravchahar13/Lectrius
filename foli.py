@@ -23,7 +23,7 @@ def map():
     locations['lon']=lon
 
     basemap=generatebasemap()
-    HeatMap(locations[["lat","lon","count"]],zoom=20).add_to(basemap)
+    # HeatMap(locations[["lat","lon","count"]],zoom=20).add_to(basemap)
     FastMarkerCluster(locations[["lat","lon","count"]],zoom=20).add_to(basemap)
     HeatMap(locations[['lat','lon','avg_rating']]).add_to(basemap)
     map_html = basemap._repr_html_()
